@@ -10,19 +10,22 @@ const Header = () => {
       fontSize: '1.6rem'
     },
     appBar: {
-      backgroundColor: '#00bcd4',
+      backgroundColor: '#2ec8e7',
+    },
+    toolbar: {
+      height: '70px'
     }
   }
 
   return (
     <div>
-      <AppBar position="static" color="secondary" style={styles.appBar}>
-        <Toolbar variant="dense">
+      <AppBar position="static" style={styles.appBar}>
+        <Toolbar variant="dense" style={styles.toolbar}>
           <IconButton color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" style={styles.typography}>
-            My Reads
+            MY READS
           </Typography>
         </Toolbar>
       </AppBar>
