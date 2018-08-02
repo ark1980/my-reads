@@ -16,10 +16,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetch_books_details()
+    this.fetchInitialBooks()
   }
 
-  fetch_books_details = () => {
+  fetchInitialBooks = () => {
     BooksAPI.getAll().then((books) => {
       this.setState({books})
     })
