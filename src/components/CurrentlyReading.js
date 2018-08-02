@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Grid from '@material-ui/core/Grid';
 import Book from './Book';
 
 class CurrentlyReading extends Component {
@@ -13,10 +12,10 @@ class CurrentlyReading extends Component {
 					</div>
 				</div>
 				<div className="BookList">
-					<Book />
-					<Book />
-					<Book />
-					<Book />
+				{this.props.books.map(book => (
+					book.shelf === "currentlyReading" &&
+					<Book book={book} key={book.id}/>
+				))}
 				</div>
 			</div>
 		);

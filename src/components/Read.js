@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Grid from '@material-ui/core/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
 import Book from './Book'
@@ -16,10 +15,10 @@ class Read extends Component {
 					</div>
 				</div>
 				<div className="BookList">
-					<Book />
-					<Book />
-					<Book />
-					<Book />
+				{this.props.books.map(book => (
+					book.shelf === "read" &&
+					<Book book={book} key={book.id}/>
+				))}
 				</div>
 			</div>
     )

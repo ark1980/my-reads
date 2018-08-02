@@ -6,25 +6,34 @@ import CurrentlyReading from './components/CurrentlyReading';
 import WantToRead from './components/WantToRead';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import * as BookAPI from './BooksAPI';
+import * as BooksAPI from './BooksAPI';
 
 library.add(fab)
 
 class App extends Component {
-
-  constructor() {
-    super()
-
-    const books = BookAPI.getAll();
-    console.log(books);
+  state = {
+    books: []
   }
+
+  componentDidMount() {
+    this.fetch_books_details()
+  }
+
+  fetch_books_details = () => {
+    BooksAPI.getAll().then((books) => {
+      this.setState({books})
+    })
+  }
+
+
   render() {
+    console.log(this.state.books)
     return (
       <div className="App">
         <Header />
-        <CurrentlyReading />
-        <WantToRead />
-        <Read />
+        <CurrentlyReading books={this.state.books} />
+        <WantToRead books={this.state.books} />
+        <Read books={this.state.books} />
       </div>
     );
   }
