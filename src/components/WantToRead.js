@@ -5,6 +5,7 @@ import Book from './Book'
 
 
 class WnatToRead extends Component {
+	
   render() {
     return(
       <div className="BookShelf">
@@ -15,10 +16,10 @@ class WnatToRead extends Component {
 					</div>
 				</div>
 				<div className="BookList">
-				{this.props.books.map(book => (
-					book.shelf === "wantToRead" &&
-					<Book book={book} key={book.id}/>
-				))}
+					{this.props.books.map(book => (
+						book.shelf === "wantToRead" &&
+						<Book book={book} key={book.id}/>
+					))}
 				</div>
 			</div>
     )

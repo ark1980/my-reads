@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(235, 235, 235);
+  background-color: #fff;
 }
 
 .App {
@@ -18,7 +18,7 @@ body {
   display: flex;
   width: 90vw;
   height: 56px;
-  background-color: rgba(136, 162, 170, 0.3);
+  background-color: #293132;
   margin: 20px auto;
   align-items: center;
   justify-content: space-between;
@@ -30,7 +30,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: #fff;
+  color: rgba(240, 247, 244,.6);
 }
 
 .BookshelfTitle h3 {
