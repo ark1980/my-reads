@@ -14,7 +14,11 @@ class CurrentlyReading extends Component {
 				<div className="BookList">
 				{this.props.books.map(book => (
 					book.shelf === "currentlyReading" &&
-					<Book book={book} key={book.id}/>
+					<Book
+						book={book}
+						key={book.id}
+						updateShelfStatus={this.props.updateShelfStatus}
+					/>
 				))}
 				</div>
 			</div>

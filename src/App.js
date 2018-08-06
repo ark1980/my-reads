@@ -25,15 +25,21 @@ class App extends Component {
     })
   }
 
+  updateShelfStatus = (book, shelf) => {
+    BooksAPI.update(book, shelf).then(
+      this.fetchInitialBooks
+    )
+  }
 
   render() {
+    const books = this.state.books
     console.log(this.state.books)
     return (
       <div className="App">
         <Header />
-        <CurrentlyReading books={this.state.books} />
-        <WantToRead books={this.state.books} />
-        <Read books={this.state.books} />
+        <CurrentlyReading books={books} updateShelfStatus={this.updateShelfStatus} />
+        <WantToRead books={books} updateShelfStatus={this.updateShelfStatus} />
+        <Read books={books} updateShelfStatus={this.updateShelfStatus} />
       </div>
     );
   }

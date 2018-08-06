@@ -18,7 +18,7 @@ body {
   display: flex;
   width: 90vw;
   height: 56px;
-  background-color: #293132;
+  background-color: #34495e;
   margin: 20px auto;
   align-items: center;
   justify-content: space-between;
@@ -41,16 +41,66 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 .Book {
-  padding: 10px;
-  margin: 20px 40px;
+  width: 140px;
+  text-align: left
+}
+.Book-title,
+.Book-authors {
+  font-size: 0.9em;
+}
+.Book-title {
+  margin-top: 10px;
+}
+.Book-authors {
+  color: #999;
+}
+
+.Book-top {
+  position: relative;
+  height: 200px;
   display: flex;
-  width: 128px;
-  height: 193px;
-  border: rgb(66, 66, 66) solid 1px;
-  background-color: rgb(224, 224, 224);
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+}
+
+.Book-shelf-changer {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2fd7ea;
+  background-image: url('./icons/arrow-drop-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.Book-shelf-changer select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Book cover */
+
+.Book-cover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: #34495e;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Book-cover-title {
+  padding: 20px 10px 0;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+form .selection {
+  opacity: 0;
 }

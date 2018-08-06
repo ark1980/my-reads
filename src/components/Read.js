@@ -17,7 +17,11 @@ class Read extends Component {
 				<div className="BookList">
 				{this.props.books.map(book => (
 					book.shelf === "read" &&
-					<Book book={book} key={book.id}/>
+					<Book 
+						book={book} 
+						key={book.id}
+						updateShelfStatus={this.props.updateShelfStatus}
+					/>
 				))}
 				</div>
 			</div>

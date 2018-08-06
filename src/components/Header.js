@@ -10,7 +10,7 @@ const Header = () => {
       fontSize: '1.6rem'
     },
     appBar: {
-      backgroundColor: '#F24236',
+      backgroundColor: '#2fd7ea',
     },
     toolbar: {
       height: '70px'
