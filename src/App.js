@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
+
 import Header from './components/Header';
-import Read from './components/Read';
-import CurrentlyReading from './components/CurrentlyReading';
-import WantToRead from './components/WantToRead';
+import ListBooks from './components/ListBooks'
+
+import Search from './components/Search';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+
 import * as BooksAPI from './BooksAPI';
 
 library.add(fab)
@@ -37,9 +41,15 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <CurrentlyReading books={books} updateShelfStatus={this.updateShelfStatus} />
-        <WantToRead books={books} updateShelfStatus={this.updateShelfStatus} />
-        <Read books={books} updateShelfStatus={this.updateShelfStatus} />
+
+        <Route exact path="/" render={() => (
+          <ListBooks 
+            books={books}
+            updateShelfStatus={this.updateShelfStatus}
+          />
+        )}/>
+        
+        <Route path="/search" component={Search} />
       </div>
     );
   }

@@ -11,6 +11,7 @@ const Header = () => {
     },
     appBar: {
       backgroundColor: '#2fd7ea',
+      marginBottom: '30px'
     },
     toolbar: {
       height: '70px'
