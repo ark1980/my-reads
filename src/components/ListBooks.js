@@ -23,7 +23,6 @@ const ListBooks = (props) => {
   const updateShelfStatus = props.updateShelfStatus;
 
   return (
-
     <div>
         <CurrentlyReading
           books={books}
@@ -47,7 +46,6 @@ const ListBooks = (props) => {
       </Link>
 
     </div>
-
   )
 }
 

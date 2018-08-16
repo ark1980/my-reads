@@ -17,7 +17,8 @@ class Book extends Component {
   render(){
 
     const { imageLinks, shelf, title, authors } = this.props.book;
-    const bookImage = imageLinks.thumbnail;
+    const bookImage = imageLinks ? imageLinks.thumbnail : '';
+    // const selectShelf = shelf ? shelf : 'none';
 
     return (
       <div className="Book">
