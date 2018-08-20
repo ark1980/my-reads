@@ -33,9 +33,6 @@ class Search extends Component {
     }
   }
 
-
-
-
   render() {
     return (
       <div className="App">
@@ -62,6 +59,7 @@ class Search extends Component {
             <li key={book.id}>
               <Book 
                 book={book}
+                updateShelfStatus={this.props.updateShelfStatus}
               />
             </li>
           ))}

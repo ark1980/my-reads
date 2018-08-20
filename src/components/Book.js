@@ -18,7 +18,7 @@ class Book extends Component {
 
     const { imageLinks, shelf, title, authors } = this.props.book;
     const bookImage = imageLinks ? imageLinks.thumbnail : '';
-    // const selectShelf = shelf ? shelf : 'none';
+    const selectShelf = shelf ? shelf : 'none';
 
     return (
       <div className="Book">
@@ -27,7 +27,7 @@ class Book extends Component {
             <div className="Book-shelf-changer">
             <form>
               <FormControl>
-                <Select className="selection" value={shelf} onChange={this.handleChange}>
+                <Select className="selection" value={selectShelf} onChange={this.handleChange}>
                   <MenuItem value="none">
                     <em>None</em>
                   </MenuItem>
