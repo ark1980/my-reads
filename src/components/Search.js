@@ -54,16 +54,21 @@ class Search extends Component {
             }
           />
         </FormControl>
-        <ol>
-          {this.state.searchedBooks.map(book => (
-            <li key={book.id}>
-              <Book 
-                book={book}
-                updateShelfStatus={this.props.updateShelfStatus}
-              />
-            </li>
-          ))}
-        </ol>
+          <ul className="BookList">
+            {this.state.searchedBooks.map(book => {
+              let shelf;
+              this.props.mainPageBooks.map(mainPageBook => {
+                book.id === mainPageBook.id ? shelf=mainPageBook.shelf : book
+              })
+              return <li key={book.id}>
+                <Book 
+                  book={book}
+                  shelf={shelf}
+                  updateShelfStatus={this.props.updateShelfStatus}
+                />
+              </li>
+            })}
+          </ul>
       </div>
     )
   }

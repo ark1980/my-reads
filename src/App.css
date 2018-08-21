@@ -1,5 +1,6 @@
 body {
   background-color: #fff;
+  list-style: none;
 }
 
 .App {
@@ -44,10 +45,16 @@ body {
   align-items: flex-start;
 }
 
+.BookList li{
+  list-style-type: none;
+}
+
 .Book {
   width: 140px;
-  text-align: left
+  text-align: left;
+  margin: 50px;
 }
+
 .Book-title,
 .Book-authors {
   font-size: 0.9em;

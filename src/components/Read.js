@@ -20,6 +20,7 @@ class Read extends Component {
 					<Book 
 						book={book} 
 						key={book.id}
+						shelf={book.shelf}
 						updateShelfStatus={this.props.updateShelfStatus}
 					/>
 				))}
